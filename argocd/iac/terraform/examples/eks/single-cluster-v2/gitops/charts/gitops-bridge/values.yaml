@@ -419,7 +419,7 @@ addons:
   cert_manager:
     enabled: true
     releaseName: cert-manager
-    namespace: '{{.metadata.annotations.cert_manager_namespace}}'
+    namespace: '{{default "cert-manager" (index .metadata.annotations "cert_manager_namespace") }}'
     chart: cert-manager
     repoUrl: https://charts.jetstack.io
     targetRevision: "v1.15.2"
