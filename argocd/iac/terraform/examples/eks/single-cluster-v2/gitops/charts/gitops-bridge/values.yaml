@@ -417,7 +417,7 @@ addons:
             serviceType: "ClusterIP"  # Instance mode needs type NodePort, IP mode needs type ClusterIP or NodePort
             backendProtocolVersion: "GRPC"  # This tells AWS to send traffic from the ALB using HTTP2. Can use gRPC as well if you want to leverage gRPC specific features
   cert_manager:
-    enabled: false
+    enabled: true
     releaseName: cert-manager
     namespace: '{{.metadata.annotations.cert_manager_namespace}}'
     chart: cert-manager
